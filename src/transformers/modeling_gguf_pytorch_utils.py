@@ -366,7 +366,8 @@ def load_gguf_checkpoint(gguf_checkpoint_path, return_tensors=False, model_to_lo
     parsed_parameters = {k: {} for k in GGUF_TO_TRANSFORMERS_MAPPING}
 
     architecture = read_field(reader, "general.architecture")[0]
-    model_name = read_field(reader, "general.name")
+    #model_name = read_field(reader, "general.name")
+    model_name = gemma2
 
     updated_architecture = None
     # in llama.cpp mistral models use the same architecture as llama. We need
